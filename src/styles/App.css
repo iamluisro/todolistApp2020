@@ -14,6 +14,10 @@
   margin: 1em;
 }
 
+.Item-List {
+  margin-bottom: 1em;
+}
+
 .Forms-Input {
   border-radius: 5px;
   width: 95%;
@@ -32,6 +36,14 @@
   margin-left: 0.5em;
   background-color: red;
   color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.ClearList-Button {
+  margin-top: 1em;
+  background-color: white;
+  color: grey;
   border-radius: 5px;
   padding: 5px 10px;
 }

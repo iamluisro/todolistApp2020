@@ -5,15 +5,23 @@ import Forms from "./Forms";
 const ToDo = () => {
   const [items, setItems] = useState([
     {
-      todoItem: "Deploy on netlify",
+      todoItem: "These are demo items",
       isCompleted: false
     },
     {
-      todoItem: "build really cool todo App",
+      todoItem: "Click on 'Complete' to mark the task as Complete.",
       isCompleted: false
     },
     {
-      todoItem: "Call Mom",
+      todoItem: "Click on the 'X' to delete an item.",
+      isCompleted: false
+    },
+    {
+      todoItem: "Click on 'Clear List' at the bottom to start your own list.",
+      isCompleted: false
+    },
+    {
+      todoItem: "Remember to call your Mom",
       isCompleted: false
     }
   ]);
@@ -35,23 +43,33 @@ const ToDo = () => {
     setItems(newItems);
   };
 
+  const clearList = () => {
+    setItems([]);
+  };
+
   return (
     <div className='Todo-Container'>
       <div>
-        <h5>Hi, Luis. Here's what you've got going on this week.</h5>
-        <h3>Feb 10, 2020 </h3>
+        <h5>Hi, there! Here's what you've got going on this week.</h5>
+        <h3>Feb 10-17, 2020 </h3>
       </div>
       <div>
-        {items.map((item, index) => (
-          <Items
-            key={index}
-            index={index}
-            item={item}
-            completedItem={completedItem}
-            removeItem={removeItem}
-          />
-        ))}
+        <ol>
+          {items.map((item, index) => (
+            <Items
+              key={index}
+              index={index}
+              item={item}
+              completedItem={completedItem}
+              removeItem={removeItem}
+            />
+          ))}
+        </ol>
         <Forms addTodo={addTodo} />
+        <button className='ClearList-Button' onClick={() => clearList()}>
+          {" "}
+          Clear list{" "}
+        </button>
       </div>
     </div>
   );
